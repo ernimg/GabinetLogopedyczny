@@ -1,0 +1,63 @@
+.banner{
+    position: relative;
+    height: 300px;
+    margin-top: 66px;
+    background-color: #fff;
+    overflow: hidden;
+    background: radial-gradient(220% 105% at top center, #1b2947 10%, #0214Aa 40%, #0258AB 65%, #028FCB);
+}
+.banner__img{
+    position: absolute;
+    max-width: 350px;
+    right: 0;
+    bottom: -39px;
+    z-index:100;
+}
+
+/*******************
+*                  *
+*****RESPONSIVE*****
+*                  *
+********************/
+
+@media all and (min-width:351px){
+    .banner__img{
+        max-width: 370px;
+        transform: translate(0,10px);
+    }  
+}
+
+@media all and (min-width:351px){
+    .banner__img{
+        max-width: 400px;
+    }  
+}
+@media all and (min-width:620px){
+    .banner__img{
+        max-width: 455px;
+    }  
+}
+@media all and (min-width:720px){
+    .banner__img{
+        max-width: 485px;
+    }  
+}
+@media all and (min-width:720px){
+
+    .banner__img{
+        max-width: 540px;
+    }  
+}
+@media all and (min-width:1200px){
+    .banner__img{
+        max-width: 610px;
+        transform: translate(0,35px);
+    }  
+}
+@media all and (min-width:1500px){
+    .banner__img{
+        max-width: 700px;
+        transform: translate(0,52px);
+    }  
+}
+

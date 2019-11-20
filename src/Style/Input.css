@@ -1,0 +1,34 @@
+.Input{
+    width: 100%;
+    padding: 10px;
+}
+.Label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.InputElement{
+    display: block;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(255,255,255,.3);
+    background-color: transparent;
+    color: #fff;
+    padding: 6px 10px;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.InputElement::placeholder{
+    color: #ddd;
+    }
+.messageText{
+  min-height: 180px; 
+ 
+}
+.InputElement:focus{
+    outline: none;
+    border-color: #eee;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+

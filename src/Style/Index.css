@@ -1,0 +1,17 @@
+/* 
+font-family: 'Open Sans', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    background-color: #eee;
+    font-family: 'Open Sans', sans-serif;
+}
