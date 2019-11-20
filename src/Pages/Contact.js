@@ -1,12 +1,14 @@
 import React,{Component} from 'react';
 import Input from '../Components/Input';
 import FormBtn from '../Components/FormBtn';
-import  '../Style/ContactForm.css';
 import styled from 'styled-components'
 import axios from "axios";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import  {faPhoneAlt,faEnvelopeOpenText,faGlobeEurope, faCaretSquareRight} from '@fortawesome/free-solid-svg-icons';
 import Recaptcha from 'react-recaptcha';
+import { toast,ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import  '../Style/ContactForm.css';
 library.add(faPhoneAlt,faEnvelopeOpenText,faGlobeEurope,faCaretSquareRight);
 
 class Contact extends Component {
@@ -67,6 +69,7 @@ class Contact extends Component {
     }
 
     validCaptcha = false;
+    notifyB = () => toast('Zaznacz pole I`m not a robot', {containerId: 'B'});
 
     inputHandler = (event,idInput)=>{
         const contactForm = {
@@ -80,28 +83,30 @@ class Contact extends Component {
 
         this.setState({contactForm});
     }
-s
+
     messagesDeliveryHandler = (event)=>{
         event.preventDefault();
 
         if (!this.validCaptcha) {
-            alert('Ogarnij captche');
+         this.notifyB();
+        }else{
+            const fromData = {};
+            for (const formElementsId in this.state.contactForm) {
+                fromData[formElementsId] = this.state.contactForm[formElementsId].value;
+            }
+          axios.post('http://localhost:8080/api/contacts', 
+          JSON.stringify(fromData), 
+          {headers: {'Content-Type': 'application/json'}})
+            .then(function (response) {
+                alert(response.data.message);
+          })
         }
-        const fromData = {};
-        for (const formElementsId in this.state.contactForm) {
-            fromData[formElementsId] = this.state.contactForm[formElementsId].value;
-        }
-      axios.post('http://localhost:8080/api/contacts', 
-      JSON.stringify(fromData), 
-      {headers: {'Content-Type': 'application/json'}})
-        .then(function (response) {
-            alert(response.data.message);
-      })
     }
     sucessCaptchaHandler = (response) =>{
         console.log(response);
         this.validCaptcha = true;
     }
+
     render(){
         const ElementsArr = [];
         for (const key in this.state.contactForm) {
@@ -128,7 +133,10 @@ s
       `;
         return(
             <>
-                <div className = "contact-mask"></div>
+                <div className="Contact__tosts">
+                <ToastContainer className="Contact__tosts" enableMultiContainer containerId={'B'} position={toast.POSITION.TOP_RIGHT} autoClose={5000} />
+                </div>
+            
                 <div className="contact">
                     <div className="contact__item0"> 
                         <h2 className="contact__item0-slogan">Skontaktuj się ze mną</h2>

@@ -41,7 +41,10 @@
 .captcha{
     margin: 10px 0 0 9px;
 }
-
+.Toastify__toast-container--top-right {
+    top: 9em;
+    right: 2em;
+}
 @media all and (min-width: 520px){
 
 .contact__item0 {
