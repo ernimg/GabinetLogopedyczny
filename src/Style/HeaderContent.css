@@ -13,7 +13,26 @@
     bottom: -39px;
     z-index:5;
 }
-
+.quote{
+position: absolute;
+width: 300px;
+padding: 5px 3px;
+left: 50%;
+transform: translate(-50%,0);
+}
+.quote__text{
+    font-size: 13px;
+    color: #ddd;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 7px;
+ 
+}
+.quote__author{
+    color: #ddd;
+    font-weight: 300;
+    text-align: right;
+}
 /*******************
 *                  *
 *****RESPONSIVE*****
@@ -27,37 +46,50 @@
     }  
 }
 
-@media all and (min-width:351px){
-    .banner__img{
-        max-width: 400px;
-    }  
-}
 @media all and (min-width:620px){
     .banner__img{
         max-width: 455px;
-    }  
+    } 
+    .quote {
+        transform: translate(-100%,3%);
+    } 
 }
-@media all and (min-width:720px){
-    .banner__img{
-        max-width: 485px;
-    }  
-}
-@media all and (min-width:720px){
 
+@media all and (min-width:720px){
     .banner__img{
-        max-width: 540px;
-    }  
+        max-width: 510px;
+    } 
+    .quote {
+        transform: translate(-114%,18%);
+    }
 }
+@media all and (min-width:950px){
+    .quote__text{
+        font-size: 16px;
+    }
+    .quote__author{
+        font-size: 18px;
+    }
+}
+
 @media all and (min-width:1200px){
     .banner__img{
         max-width: 610px;
         transform: translate(0,35px);
     }  
+    .quote{
+        width: 450px;
+        }
 }
 @media all and (min-width:1500px){
     .banner__img{
         max-width: 700px;
         transform: translate(0,52px);
-    }  
+    } 
+    .quote{
+        width: 700px;
+        transform: translate(-92%,60%);
+        }
 }
+
 

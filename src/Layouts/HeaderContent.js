@@ -16,12 +16,13 @@ const HeaderComponents = ()=>{
             <div className="shooting-stars"></div>
 
             </div>
-            <div>
-                <div>
-                    <p>
-                        Jeśli umiecie diagnozować radość dziecka i jej natężenie, musicie dostrzec,że najwyższa jest radość z pokonanej trudności, osiągniętego celu, odkrytej tajemnicy. Radość triumfu i szczęście samodzielności, opanowania i władania.
-                    </p>
-                </div>
+            <div className="quote">
+                <p className="quote__text">
+                   "Jeśli umiecie diagnozować radość dziecka i jej natężenie, musicie dostrzec,że najwyższa jest radość z pokonanej trudności, osiągniętego celu, odkrytej tajemnicy. Radość triumfu i szczęście samodzielności, opanowania i władania." 
+                </p>
+                <h2 className="quote__author">
+                    Janusz Korczak
+                </h2>
             </div>
         </div>
     )
