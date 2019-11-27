@@ -10,10 +10,13 @@ import axios from "axios";
 axios.interceptors.response.use((response) => {
   return response;
 }, (error) => {
+  if (error.response == null) {
+    alert(error);
+    return;
+  }
   if (error.response.status === 400) {
       alert(error.response.data.message);
   }
-  return Promise.reject(error.response);
 });
 
 class App extends Component {

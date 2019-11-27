@@ -5,19 +5,23 @@ import axios from 'axios';
 class Blog extends Component{
 
     state = {  
-        posts: []
+        posts: [],
+        nextUrl: '',
+        previousUrl: ''
     }
  
     componentDidMount() {
-        this.getPost();
+        this.getPost(`https://afternoon-basin-77084.herokuapp.com/posts/`);
     }
 
-    getPost = () => {
-        axios.get(`http://127.0.0.1:8000/posts`)
+    getPost = (url) => {
+        axios.get(url)
              .then( res => {
-                
+                console.log(res.data)
                  this.setState({
-                     posts: res.data.results
+                     posts: res.data.results,
+                     nextUrl: res.data.next,
+                     previousUrl: res.data.previous
                  }) 
                 //  console.log(this.state.posts);
              })
@@ -40,11 +44,15 @@ class Blog extends Component{
             </Link>
         ))
         return (
-            <div className="Blog">
-                {posts}
-            </div>
+            <>
+                <div className="Blog">
+                    {posts}
+                </div>
+                <button type="button" disabled={!this.state.previousUrl} onClick={(event) => this.getPost(this.state.previousUrl)}>Poprzednia strona</button>
+                <button type="button" disabled={!this.state.nextUrl} onClick={(event) => this.getPost(this.state.nextUrl)}>Następna</button>
+            </>
         )
-    }
+    }s
  
 }
 

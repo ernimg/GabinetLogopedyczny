@@ -90,6 +90,12 @@ transform: translate(-50%,0);
         width: 700px;
         transform: translate(-92%,60%);
         }
+        .quote__text{
+            font-size: 18px;
+        }
+        .quote__author{
+            font-size: 22px;
+        }
 }
 
 
