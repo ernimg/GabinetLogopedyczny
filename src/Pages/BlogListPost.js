@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import '../Style/BlogListPost.css';
 import axios from 'axios';
+import img from '../Images/child.jpg';
 class Blog extends Component{
 
     state = {  
@@ -29,18 +30,17 @@ class Blog extends Component{
 
     render() {
         const posts = this.state.posts.map(post => (
-            <Link key={post.id} to={`/blog/post/${post.id}`} >
+            <Link className="Blog-link" key={post.id} to={`/blog/post/${post.id}`}>
                 <div className="Blog-post">
-                     <h2>{post.title}</h2>
-                     <div>
-                         <p>
-                            {post.long_text} 
-                         </p>
-                     </div>
-                     <div>
+                     <h2 className="Blog-post-title" >{post.title}</h2>
+                     <h6 className="Blog-post-date">
                         {post.published_date}
-                     </div>
+                     </h6>
+                    <p className="Blog-post-text">
+                        {post.long_text.length > 210 ? `${post.long_text.substr(0,210)}...` : post.long_text}
+                    </p>
                 </div>
+                <img className="Blog-img-item" src={img} alt='blog-img'></img>
             </Link>
         ))
         return (
