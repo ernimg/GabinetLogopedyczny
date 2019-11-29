@@ -6,7 +6,7 @@
  .page__content-container{
     width: 100%;
     min-height: 70vh;
-    padding-top: 30px;
+    padding: 30px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -148,7 +148,13 @@
         align-items: center;
     }
     .card{
-        height: 400px
+        height: 540px;
   
+    }
+    .svg-inline--fa.fa-file-download.fa-w-12,
+    .svg-inline--fa.fa-calendar-alt.fa-w-14,
+    .svg-inline--fa.fa-comment-alt.fa-w-16{
+        width: 160px;
+        height: 160px;
     }
 }

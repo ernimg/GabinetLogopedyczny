@@ -4,6 +4,9 @@
 	margin: 40px auto;
 	border: .5px solid rgba(0, 0, 0, 0.89);
 	padding: 20px;
+	/* background-image: url(../Images/quote.png); */
+	background-size: cover;
+	background-position: center center;
 	background-color: #fff;
 }
 .dataBar-title,
@@ -41,12 +44,13 @@
 }
 .back-arrow{
 	position: absolute;
-	left: 2%;
+	left: 3%;
 	bottom: 3%;
 	width: 35px;
 	height: 35px;
 	color:rgba(0, 0, 0, 0.89);
-
+	opacity:0.9;
+	animation: arrow 0.6s infinite alternate ease-in-out;
 }
 @media all and (min-width:414px){
 	.Post-wrapper{
@@ -76,3 +80,8 @@
 		padding: 60px;
 	}
 }
+
+@keyframes arrow {
+	0% { transform: translateX(0); opacity: 0.9 }
+	100% { transform: translateX(-0.4em); opacity: 0.5 }
+  }

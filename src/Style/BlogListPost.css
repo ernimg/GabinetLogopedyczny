@@ -80,6 +80,9 @@
     .Blog-post{
         padding: 0px 12px;
     }
+
+}
+@media all and (min-width:360px){
     .bar{
         display: block;
     }

@@ -40,6 +40,9 @@ render() {
                     <h6 className="dataBar-date">data</h6>
                 </div>
                 <div>
+                    social dataBar
+                </div>
+                <div>
                     <h2 className="post-title" >{this.state.title}</h2>
                     <p className="post-text">{this.state.message}</p>
                     <Link to="/blog">
