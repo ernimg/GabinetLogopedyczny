@@ -9,7 +9,9 @@
 }
 .page{
     z-index: 5;
-    flex-grow: 1;
 }
-
-
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}

@@ -1,14 +1,17 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import '../Style/BlogListPost.css';
 import axios from 'axios';
+import PulseLoader from 'react-spinners/PulseLoader'
 import img from '../Images/child.jpg';
+import '../Style/BlogListPost.css';
+
 class Blog extends Component{
 
     state = {  
         posts: [],
         nextUrl: '',
-        previousUrl: ''
+        previousUrl: '',
+        loading: true
     }
  
     componentDidMount() {
@@ -18,15 +21,24 @@ class Blog extends Component{
     getPost = (url) => {
         axios.get(url)
              .then( res => {
+    
                  this.setState({
                      posts: res.data.results,
                      nextUrl: res.data.next,
-                     previousUrl: res.data.previous
+                     previousUrl: res.data.previous,
+                     loading: false
                  }) 
              })
     }
 
     render() {
+
+       const override =`
+       height: 100px;
+       width: 100px;
+       text-align: center;
+       line-height: 100px;
+       `
         const posts = this.state.posts.map(post => (
             <Link className="Blog-link" key={post.id} message ={post.lo} to={`/blog/post/${post.id}`}>
                 <div className="Blog-post">
@@ -43,14 +55,26 @@ class Blog extends Component{
                 </div>
                 <img className="Blog-img-item" src={img} alt='blog-img'></img>
             </Link>
+
+
         ))
         return (
+
             <>
-                <div className="Blog">
-                    {posts}
-                </div>
-                <button type="button" disabled={!this.state.previousUrl} onClick={(event) => this.getPost(this.state.previousUrl)}>Poprzednia strona</button>
-                <button type="button" disabled={!this.state.nextUrl} onClick={(event) => this.getPost(this.state.nextUrl)}>Następna</button>
+                {
+                    this.state.loading ?
+                    <span className="loader">
+                         <PulseLoader  css={override}/>
+                    </span>
+                    :
+                    <div className="Blog">
+                      {posts}
+                      <div>
+                         <button type="button" disabled={!this.state.previousUrl} onClick={(event) => this.getPost(this.state.previousUrl)}>Poprzednia strona</button>
+                        <button type="button" disabled={!this.state.nextUrl} onClick={(event) => this.getPost(this.state.nextUrl)}>Następna</button>
+                      </div>
+                    </div>
+                }
             </>
         )
     }s

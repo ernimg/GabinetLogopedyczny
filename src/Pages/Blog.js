@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios';
 import { FaArrowLeft, FaUser} from 'react-icons/fa';
 import '../Style/post.css';
+
 class Blog  extends Component{
     constructor(props) {
         super(props);
@@ -33,6 +34,7 @@ render() {
 
     return (
         <>
+          
             <article className="Post-wrapper">
                 <div className="dataBar clearfix">
                     <FaUser className="dataBar-avatar"/>
