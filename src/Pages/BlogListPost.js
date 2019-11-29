@@ -18,19 +18,17 @@ class Blog extends Component{
     getPost = (url) => {
         axios.get(url)
              .then( res => {
-                console.log(res.data)
                  this.setState({
                      posts: res.data.results,
                      nextUrl: res.data.next,
                      previousUrl: res.data.previous
                  }) 
-                //  console.log(this.state.posts);
              })
     }
 
     render() {
         const posts = this.state.posts.map(post => (
-            <Link className="Blog-link" key={post.id} to={`/blog/post/${post.id}`}>
+            <Link className="Blog-link" key={post.id} message ={post.lo} to={`/blog/post/${post.id}`}>
                 <div className="Blog-post">
                      <h2 className="Blog-post-title" >{post.title}</h2>
                      <h6 className="Blog-post-date">
