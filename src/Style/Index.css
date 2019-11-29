@@ -15,3 +15,9 @@ html{
     background-color: #eee;
     font-family: 'Open Sans', sans-serif;
 }
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

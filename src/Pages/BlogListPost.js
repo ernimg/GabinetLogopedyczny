@@ -31,9 +31,12 @@ class Blog extends Component{
             <Link className="Blog-link" key={post.id} message ={post.lo} to={`/blog/post/${post.id}`}>
                 <div className="Blog-post">
                      <h2 className="Blog-post-title" >{post.title}</h2>
-                     <h6 className="Blog-post-date">
-                        {post.published_date}
-                     </h6>
+                    <div className="bar clearfix">
+                        <h3 className="Blog-post-author" >Joanna Zacniewska</h3>
+                        <h6 className="Blog-post-date">
+                            {post.published_date}
+                        </h6>  
+                    </div>   
                     <p className="Blog-post-text">
                         {post.long_text.length > 210 ? `${post.long_text.substr(0,210)}...` : post.long_text}
                     </p>

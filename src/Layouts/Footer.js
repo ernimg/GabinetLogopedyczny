@@ -30,7 +30,7 @@ const Footer = ()=>{
                 <SocialMediaIcons
                     className="footer__social-links"
                     icons={socialMediaIcons}
-                    iconColor={'#ccc'}
+                    iconColor={'#eee'}
                 />
             </div>
             <div >
