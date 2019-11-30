@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import PulseLoader from 'react-spinners/PulseLoader'
 import img from '../Images/child.jpg';
+import {FaArrowCircleLeft,FaArrowCircleRight} from 'react-icons/fa';
 import '../Style/BlogListPost.css';
 
 class Blog extends Component{
@@ -50,7 +51,7 @@ class Blog extends Component{
                         </h6>  
                     </div>   
                     <p className="Blog-post-text">
-                        {post.long_text.length > 210 ? `${post.long_text.substr(0,210)}...` : post.long_text}
+                        {post.long_text.length > 200 ? `${post.long_text.substr(0,200)}...` : post.long_text}
                     </p>
                 </div>
                 <img className="Blog-img-item" src={img} alt='blog-img'></img>
@@ -63,15 +64,13 @@ class Blog extends Component{
             <>
                 {
                     this.state.loading ?
-                    <span className="loader">
-                         <PulseLoader  css={override}/>
-                    </span>
+                    <span className="loader"><PulseLoader  css={override}/></span>
                     :
                     <div className="Blog">
                       {posts}
-                      <div>
-                         <button type="button" disabled={!this.state.previousUrl} onClick={(event) => this.getPost(this.state.previousUrl)}>Poprzednia strona</button>
-                        <button type="button" disabled={!this.state.nextUrl} onClick={(event) => this.getPost(this.state.nextUrl)}>Następna</button>
+                      <div className="Blog-paginatiom">
+                         <button className="Blog-left-btn" type="button" disabled={!this.state.previousUrl} onClick={(event) => this.getPost(this.state.previousUrl)}><FaArrowCircleLeft className="b-l"/></button>
+                        <button className="Blog-right-btn" type="button" disabled={!this.state.nextUrl} onClick={(event) => this.getPost(this.state.nextUrl)}><FaArrowCircleRight className="b-r"/></button>
                       </div>
                     </div>
                 }

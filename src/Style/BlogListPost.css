@@ -74,7 +74,25 @@
 }
 .Blog-img-item{
     display: none;
-  
+
+}
+
+.Blog-paginatiom{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+.Blog-right-btn,
+.Blog-left-btn{
+border: unset;
+outline: none;
+background-color: transparent;
+}
+.b-r,
+.b-l{
+    font-size: 50px;
+    margin: 9px;
+    cursor: pointer;
 }
 
 @media all and (min-width:360px){
@@ -83,7 +101,7 @@
     }
 
 }
-@media all and (min-width:360px){
+@media all and (min-width:414px){
     .bar{
         display: block;
     }

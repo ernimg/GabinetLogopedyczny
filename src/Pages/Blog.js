@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
+import PulseLoader from 'react-spinners/PulseLoader'
 import { FaArrowLeft, FaUser} from 'react-icons/fa';
 import '../Style/post.css';
 
@@ -10,7 +11,8 @@ class Blog  extends Component{
         this.state = {
             title:"",
             message:"",
-            id: props.match.params.id
+            id: props.match.params.id,
+            loading: true
         };
       }
 
@@ -23,18 +25,26 @@ componentDidMount(){
         console.log(message)
        this.setState({
         title:message.data.title,
-        message: message.data.long_text
+        message: message.data.long_text,
+        loading: false
        }) 
     })
 
 }
 
 render() {
-    
-
+    const override =`
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+    `
     return (
         <>
-          
+          {
+             this.state.loading ?
+             <span className="loader"><PulseLoader  css={override}/></span>
+             :
             <article className="Post-wrapper">
                 <div className="dataBar clearfix">
                     <FaUser className="dataBar-avatar"/>
@@ -52,6 +62,7 @@ render() {
                     </Link> 
                 </div>
             </article>
+          }
         </>
     );
 }
