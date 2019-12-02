@@ -2,10 +2,10 @@
 .page__content-home{
     width: 100%;
     overflow: hidden;
- 
-    /* background-image: url(../Images/piorko.png);
-    background-position: center center;
-    background-size: cover; */
+    /* background-image: url(../Images/boy.jpg);
+    background-position: -839px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;  */
  }
  .page__content-container{
     width: 100%;
@@ -135,7 +135,11 @@
         margin: 20px 0;
     }
 }
-
+@media all and (min-width: 701px){
+    .page__content-home {
+        background-position: 0px 0px;
+}
+}
 @media all and (min-width: 930px){
     .page__content-container{
         align-items: flex-ends;
@@ -143,9 +147,9 @@
     }
     .card{
         width:23%;
-  
     }
 }
+
 @media all and (min-width: 1200px){
     .page__content-container{
         align-items: center;

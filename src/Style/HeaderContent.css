@@ -26,6 +26,7 @@ transform: translate(-50%,0);
     font-weight: 300;
     text-align: center;
     margin-bottom: 7px;
+    text-align: justify;
  
 }
 .quote__author{
@@ -91,10 +92,10 @@ transform: translate(-50%,0);
         transform: translate(-92%,60%);
         }
         .quote__text{
-            font-size: 18px;
+            font-size: 20px;
         }
         .quote__author{
-            font-size: 22px;
+            font-size: 23px;
         }
 }
 

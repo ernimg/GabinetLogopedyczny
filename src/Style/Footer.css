@@ -68,7 +68,7 @@
     text-align: center;
     font-size: 15px;
     color: #0192B6;
-    background-color: #eee;
+    background-color: rgb(252, 252, 252);
 }
 
 @media all and (min-width:480px){

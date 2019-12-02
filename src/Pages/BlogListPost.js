@@ -41,7 +41,28 @@ class Blog extends Component{
        line-height: 100px;
        `
         const posts = this.state.posts.map(post => (
-            <Link className="Blog-link" key={post.id} message ={post.lo} to={`/blog/post/${post.id}`}>
+            // <div className="post">
+            //     <div className="post-img">
+            //         <img  src={img} alt='blog-img'></img>
+            //     </div>
+            //     <div className="post__info">
+            //         <div className="post__date">
+
+            //             <span>{post.published_date}</span>
+            //         </div>
+            //         <h1 className="post__title">
+            //             {post.title}
+            //         </h1>
+            //         <p className="post__text">
+            //             {post.long_text.length > 200 ? `${post.long_text.substr(0,200)}...` : post.long_text}
+            //         </p>
+            //         <Link className="post-link" key={post.id}  to={`/blog/post/${post.id}`}>
+            //             Zobacz Więcej
+            //         </Link>
+            //     </div>
+            // </div>
+
+            <Link className="Blog-link" key={post.id}  to={`/blog/post/${post.id}`}>
                 <div className="Blog-post">
                      <h2 className="Blog-post-title" >{post.title}</h2>
                     <div className="bar clearfix">
@@ -60,7 +81,6 @@ class Blog extends Component{
 
         ))
         return (
-
             <>
                 {
                     this.state.loading ?
