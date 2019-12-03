@@ -88,13 +88,11 @@
     left: 0;
     background-color: RGBA(255,255,255,.1);
 }
-
 /*******************
 *                  *
 *****RESPONSIVE*****
 *                  *
 ********************/
-
 @media all and (min-width: 360px){
     .card{
         width: 280px;

@@ -22,7 +22,6 @@ class Blog extends Component{
     getPost = (url) => {
         axios.get(url)
              .then( res => {
-    
                  this.setState({
                      posts: res.data.results,
                      nextUrl: res.data.next,
@@ -33,7 +32,7 @@ class Blog extends Component{
     }
 
     render() {
-
+        console.log(this.state.posts);
        const override =`
        height: 100px;
        width: 100px;
