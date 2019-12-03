@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import PulseLoader from 'react-spinners/PulseLoader';
 import {FaRegFileWord} from 'react-icons/fa';
 import '../Style/FileSection.css';
 
@@ -24,6 +25,12 @@ class Materials extends Component{
     }
     render(){
         console.log(this.state.files);
+        const override =`
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        line-height: 100px;
+        `
       const listFiles = this.state.files.map( file => (
         
             <div key={file.media_name} className="file">
@@ -43,12 +50,19 @@ class Materials extends Component{
          ))
         return (
             <>
-                <h1 className="file-zone-title">
+            {
+                this.state.loading ?
+                <span className="loader"><PulseLoader  css={override}/></span>
+                : 
+                <div>
+                    <h1 className="file-zone-title">
                     Strefa Plików
-                </h1>
-                <div className="file-wrapper">
-                {listFiles}
+                    </h1>
+                    <div className="file-wrapper">
+                    {listFiles}
+                    </div> 
                 </div>
+            }
             </>
         );
     }

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import PulseLoader from 'react-spinners/PulseLoader'
+import PulseLoader from 'react-spinners/PulseLoader';
 import img from '../Images/child.jpg';
 import {FaArrowCircleLeft,FaArrowCircleRight} from 'react-icons/fa';
 import '../Style/BlogListPost.css';
