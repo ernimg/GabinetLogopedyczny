@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {FaRegFileWord} from 'react-icons/fa';
-import { link } from 'fs';
+import '../Style/FileSection.css';
 
 class Materials extends Component{
  state = {
@@ -28,25 +28,28 @@ class Materials extends Component{
         
             <div key={file.media_name} className="file">
                 <div className="file__icon">
-                    <FaRegFileWord/>
+                    <FaRegFileWord className="file__icon-word"/>
                 </div>
-                <div className="file__tiltle">
-                    <h2>
-                        {file.media_name}
-                    </h2>
-                </div>
+                <h2 className="file__tiltle-h2" >
+                    {file.media_name.length > 20 ? `${file.media_name.substr(0,20)}...` : file.media_name}
+                </h2>
                 <div className="file__short-description">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, quo id! Voluptate totam nulla quae, quia alias fuga quaerat. Voluptatum eos accusamus recusandae magnam itaque praesentium, dolor sed dolore rerum?
                     </p>
                 </div>
-                    <Link to={file.media_url} target="_blank" download>Pobierz</Link>          
+                    <Link className="post__download" to={file.media_url} target="_blank" download>Pobierz</Link>          
             </div>
          ))
         return (
-            <div>
-              {listFiles}
-            </div>
+            <>
+                <h1 className="file-zone-title">
+                    Strefa Plików
+                </h1>
+                <div className="file-wrapper">
+                {listFiles}
+                </div>
+            </>
         );
     }
 }
