@@ -23,6 +23,8 @@ flex-wrap: wrap;
 
 .file,
 .file__icon,
+.file__jpg,
+.file__pdf,
 .file__tiltle-h2,
 .file__short-description{
     transition: .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
@@ -38,27 +40,41 @@ flex-wrap: wrap;
  overflow: hidden;
 
 }
-.file:hover{
-    box-shadow: 0 15px 18px rgba(42, 86, 153, .7);
-}
-.file__icon{
+
+.file__icon,
+.file__jpg,
+.file__pdf{
     width: 100px;
     height: 100px;
     margin: 0 auto 15px auto;
-    background-color: rgb(42, 86, 153);
     color: #fff;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
- 
 }
+.file__icon{
+    background-color: rgb(42, 86, 153);
+}
+.file__pdf{
+    background-color: rgb(222,28,35);
+}
+.file__jpg{
+    background-color: rgb( 255,189,51);
+}
+
 .file:hover .file__icon{
     box-shadow: 0 0 0 400px rgba(42, 86, 153,9);
 }
+.file:hover .file__pdf{
+    box-shadow: 0 0 0 400px rgba(222,28,35,9);
+}
+.file:hover .file__jpg{
+    box-shadow: 0 0 0 400px rgba(255,189,51);
+}
 .file__icon-word,
 .file__icon-pdf,
-.file__icon-img{
+.file__icon-jpg{
     font-size: 70px;
 }
 

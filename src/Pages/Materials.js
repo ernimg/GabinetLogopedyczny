@@ -26,18 +26,17 @@ class Materials extends Component{
     changeIcon = (extension)=>{
         console.log(extension);
         if(extension === ".doc" || extension === ".docx" ){
-            return <FaRegFileWord className="file__icon-word"/>;
+            return  <div className="file__icon"><FaRegFileWord  className="file__icon-word"/></div>
         }else if(extension === ".pdf"){
-            return <FaFilePdf className="file__icon-pdf"/>
+            return <div className="file__pdf"><FaFilePdf className="file__icon-pdf"/></div>
         }else if(extension === ".jpg"){
-            return <FaImage className="file__icon-img"/>
+            return <div className="file__jpg"><FaImage className="file__icon-jpg"/></div> 
         }
     }
+
     render(){
         console.log(this.state.files);
-        const word = `
-        background-color: rgb(42, 86, 153);
-        `
+
         const override =`
         height: 100px;
         width: 100px;
@@ -47,9 +46,7 @@ class Materials extends Component{
       const listFiles = this.state.files.map( file => (
         
             <div key={file.media_name} className="file" >
-                <div className="file__icon">  
                 {this.changeIcon(file.extension)} 
-                </div>
                 <h2 className="file__tiltle-h2" >
                     {file.media_name.length > 20 ? `${file.media_name.substr(0,20)}...` : file.media_name}
                 </h2>

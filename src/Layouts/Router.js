@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route,Switch} from 'react-router-dom';
+import {Route,Switch,Redirect} from 'react-router-dom';
 import HomePage from '../Pages/HomePage';
 import About from '../Pages/About';
 import Contact from '../Pages/Contact';
@@ -7,20 +7,21 @@ import SpeetchTeraphy from '../Pages/SpeechTerapy';
 import Materials from '../Pages/Materials';
 import Blog from '../Pages/Blog';
 import BlogListPost from '../Pages/BlogListPost';
-import ErrorPage from '../Pages/SpeechTerapy';
+import ErrorPage from '../Pages/ErrorPage';
 
 const Page = ()=>{
     return(
         <>
             <Switch>
                 <Route  path='/' exact component={HomePage}/>
-                <Route  path='/about'  component={About}/>
-                <Route  path='/contact'  component={Contact} />
-                <Route  path='/speetch-terapy'  component={SpeetchTeraphy} />
-                <Route  path='/materials'  component={Materials}/>
+                <Route  exact path='/about'  component={About}/>
+                <Route  exact path='/contact'  component={Contact} />
+                <Route  exact path='/speetch-terapy'  component={SpeetchTeraphy} />
+                <Route  exact path='/materials'  component={Materials}/>
                 <Route  exact path='/blog'  component={BlogListPost}/>
                 <Route  exact path='/blog/post/:id' component={Blog}/>
-                <Route  path='/ErrPage'  component={ErrorPage} />
+                <Route  path="/*" component={ErrorPage} />
+                <Redirect to='/ErrPage'/>
             </Switch>
         </>
     )
