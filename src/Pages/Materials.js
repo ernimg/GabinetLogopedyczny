@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import PulseLoader from 'react-spinners/PulseLoader';
-import {FaRegFileWord} from 'react-icons/fa';
+import {FaRegFileWord,FaFilePdf,FaImage} from 'react-icons/fa';
 import '../Style/FileSection.css';
 
 class Materials extends Component{
@@ -23,8 +23,21 @@ class Materials extends Component{
     
         })
     }
+    changeIcon = (extension)=>{
+        console.log(extension);
+        if(extension === ".doc" || extension === ".docx" ){
+            return <FaRegFileWord className="file__icon-word"/>;
+        }else if(extension === ".pdf"){
+            return <FaFilePdf className="file__icon-pdf"/>
+        }else if(extension === ".jpg"){
+            return <FaImage className="file__icon-img"/>
+        }
+    }
     render(){
         console.log(this.state.files);
+        const word = `
+        background-color: rgb(42, 86, 153);
+        `
         const override =`
         height: 100px;
         width: 100px;
@@ -33,9 +46,9 @@ class Materials extends Component{
         `
       const listFiles = this.state.files.map( file => (
         
-            <div key={file.media_name} className="file">
-                <div className="file__icon">
-                    <FaRegFileWord className="file__icon-word"/>
+            <div key={file.media_name} className="file" >
+                <div className="file__icon">  
+                {this.changeIcon(file.extension)} 
                 </div>
                 <h2 className="file__tiltle-h2" >
                     {file.media_name.length > 20 ? `${file.media_name.substr(0,20)}...` : file.media_name}
@@ -45,7 +58,7 @@ class Materials extends Component{
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, quo id! Voluptate totam nulla quae, quia alias fuga quaerat. Voluptatum eos accusamus recusandae magnam itaque praesentium, dolor sed dolore rerum?
                     </p>
                 </div>
-                    <Link className="post__download" to={file.media_url} target="_blank" download>Pobierz</Link>          
+                    <a className="post__download" href={file.media_url}>Pobierz</a>          
             </div>
          ))
         return (

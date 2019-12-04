@@ -3,7 +3,7 @@ import '../Style/App.css';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Navigation from '../Layouts/Navigation';
 import HeaderContent from '../Layouts/HeaderContent';
-import Page from '../Layouts/Page';
+import Page from '../Layouts/Router';
 import Footer from '../Layouts/Footer';
 import axios from "axios";
 

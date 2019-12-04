@@ -56,7 +56,9 @@ flex-wrap: wrap;
 .file:hover .file__icon{
     box-shadow: 0 0 0 400px rgba(42, 86, 153,9);
 }
-.file__icon-word{
+.file__icon-word,
+.file__icon-pdf,
+.file__icon-img{
     font-size: 70px;
 }
 
