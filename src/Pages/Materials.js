@@ -24,7 +24,7 @@ class Materials extends Component{
         })
     }
     changeIcon = (extension)=>{
-        console.log(extension);
+   
         if(extension === ".doc" || extension === ".docx" ){
             return  <div className="file__icon"><FaRegFileWord  className="file__icon-word"/></div>
         }else if(extension === ".pdf"){
@@ -52,7 +52,7 @@ class Materials extends Component{
                 </h2>
                 <div className="file__short-description">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, quo id! Voluptate totam nulla quae, quia alias fuga quaerat. Voluptatum eos accusamus recusandae magnam itaque praesentium, dolor sed dolore rerum?
+                       {file.media_description}
                     </p>
                 </div>
                     <a className="post__download" href={file.media_url}>Pobierz</a>          
