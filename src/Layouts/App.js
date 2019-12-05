@@ -6,16 +6,23 @@ import HeaderContent from '../Layouts/HeaderContent';
 import Page from '../Layouts/Router';
 import Footer from '../Layouts/Footer';
 import axios from "axios";
+import {toast, ToastContainer} from 'react-toastify'
 
 axios.interceptors.response.use((response) => {
   return response;
 }, (error) => {
   if (error.response == null) {
-    alert(error);
-    return;
+    toast('BŁĄD', {type: 'error'});
+    throw error.message;
   }
   if (error.response.status === 400) {
-      alert(error.response.data.message);
+      debugger
+      //TODO Change in case when backend will standarize the response errors.
+
+      const firstErrorFieldName = Object.keys(error.response.data)[0];
+      const firstErrorMessage = Object.values(error.response.data)[0][0];
+      toast(firstErrorFieldName + ': ' + firstErrorMessage, {type: 'error'});
+      throw error.message
   }
 });
 
@@ -23,6 +30,7 @@ class App extends Component {
     render(){
       return(
         <Router>
+          <ToastContainer  position={toast.POSITION.TOP_RIGHT} autoClose={5000} />
           <div className = "app">
             <header className = "header" >
               {<Navigation/>}

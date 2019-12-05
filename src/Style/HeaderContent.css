@@ -4,8 +4,9 @@
     margin-top: 66px;
     background-color: #fff;
     overflow: hidden;
-    background: radial-gradient(220% 105% at top center, #1b2947 10%, #0214Aa 40%, #0258AB 65%, #028FCB);
+    background: radial-gradient(220% 105% at top center,#09142a 10%,#09146e 40%,#103c66 65%,#036f9e);
 }
+
 .banner__img{
     position: absolute;
     max-width: 350px;

@@ -40,7 +40,7 @@ class Contact extends Component {
                 },
                 value:''
             },
-            tel:{
+            phone_number:{
                 elementType:'input',
                 elementConfig:{
                     type:'text',
@@ -48,7 +48,7 @@ class Contact extends Component {
                 },
                 value:''
             },
-            messages:{
+            message:{
                 elementType:'textarea',
                 elementConfig:{
                     type:'text',
@@ -69,8 +69,7 @@ class Contact extends Component {
     }
 
     validCaptcha = false;
-    notifyB = () => toast('Zaznacz pole I`m not a robot', {containerId: 'B'});
-
+ 
     inputHandler = (event,idInput)=>{
         const contactForm = {
             ...this.state.contactForm
@@ -85,28 +84,23 @@ class Contact extends Component {
     }
 
     messagesDeliveryHandler = (event)=>{
+        
         event.preventDefault();
-
-        if (!this.validCaptcha) {
-         this.notifyB();
-        }else{
-            const fromData = {};
-            for (const formElementsId in this.state.contactForm) {
-                fromData[formElementsId] = this.state.contactForm[formElementsId].value;
-            }
-          axios.post('http://localhost:8080/api/contacts', 
-          JSON.stringify(fromData), 
-          {headers: {'Content-Type': 'application/json'}})
-            .then(function (response) {
-                alert(response.data.message);
-          })
+        const fromData = {};
+        for (const formElementsId in this.state.contactForm) {
+            fromData[formElementsId] = this.state.contactForm[formElementsId].value;
         }
+        axios.post('https://afternoon-basin-77084.herokuapp.com/contact/', 
+        JSON.stringify(fromData), 
+        {headers: {'Content-Type': 'application/json'}})
+          .then(function (response) {
+           toast(response.data.message, {containerId: 'A'})
+        })
     }
     sucessCaptchaHandler = (response) =>{
-        console.log(response);
         this.validCaptcha = true;
     }
-
+ 
     render(){
         const ElementsArr = [];
         for (const key in this.state.contactForm) {
@@ -120,21 +114,22 @@ class Contact extends Component {
         width: 300px;
         padding: 25px 0;
         font-size: 18px;
-        border: 2px solid #08AA57;
+        border: 2px solid rgb(38, 196, 196);
         border-radius: 10px;
-        color: #ddd;
+        color: rgb(38, 196, 196);
         margin: 30px auto 0 auto;
         background-color: transparent;
         transition: .3s;
         &:hover {
-            background-color: #08AA57;
+            background-color: rgb(38, 196, 196);
             font-size: 19px;
+            color: #232222;
           }
       `;
         return(
             <>
                 <div className="Contact__tosts">
-                <ToastContainer className="Contact__tosts" enableMultiContainer containerId={'B'} position={toast.POSITION.TOP_RIGHT} autoClose={5000} />
+                <ToastContainer className="Contact__tosts" enableMultiContainer containerId={'A'} position={toast.POSITION.TOP_RIGHT} autoClose={5000} />
                 </div>
             
                 <div className="contact">

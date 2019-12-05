@@ -95,7 +95,7 @@ flex-wrap: wrap;
     width: 100%;
     text-align: justify;
     font-size: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 } 
 .file:hover .file__short-description{
     color: rgb(250, 250, 250);
