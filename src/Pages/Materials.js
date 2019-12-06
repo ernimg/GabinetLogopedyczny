@@ -65,9 +65,15 @@ class Materials extends Component{
                 <span className="loader"><PulseLoader  css={override}/></span>
                 : 
                 <div>
-                    <h1 className="file-zone-title">
-                    Strefa Plików
-                    </h1>
+                    <div className="file-zone">
+                        <h1 className="file-zone-title">
+                            Strefa Plików
+                        </h1>
+                        <p>
+                            Wtym miejscu znajdziesz pliki, które przygotowałam dla Ciebie lub o których wpominałam w moich artykułach na blogu. 
+                            Znajdziesz tam wiele prydatnych wskazówek lub świczeń jak pracować z swoim dzieckiem.
+                        </p>
+                    </div>
                     <div className="file-wrapper">
                     {listFiles}
                     </div> 

@@ -16,12 +16,12 @@ axios.interceptors.response.use((response) => {
     throw error.message;
   }
   if (error.response.status === 400) {
-      debugger
+      
       //TODO Change in case when backend will standarize the response errors.
 
-      const firstErrorFieldName = Object.keys(error.response.data)[0];
-      const firstErrorMessage = Object.values(error.response.data)[0][0];
-      toast(firstErrorFieldName + ': ' + firstErrorMessage, {type: 'error'});
+      // const firstErrorFieldName = Object.keys(error.response.data)[0];
+      // const firstErrorMessage = Object.values(error.response.data)[0][0];
+      toast(error.response.data.message, {type: 'error'});
       throw error.message
   }
 });

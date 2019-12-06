@@ -1,11 +1,15 @@
+
+.file-zone{
+    text-align: center;
+    color: #eee;
+    background-color: #2C2A2B;
+}
 .file-zone-title{
     text-align: center;
     padding: 30px 0;
     font-size: 22px;
     letter-spacing: 1px;
     font-weight: 300;
-    background-color: #2C2A2B;
-    color: #eee;
 }
 .file-wrapper{
 widows: 100%;
@@ -26,7 +30,8 @@ flex-wrap: wrap;
 .file__jpg,
 .file__pdf,
 .file__tiltle-h2,
-.file__short-description{
+.file__short-description,
+.post__download{
     transition: .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
 .file{
@@ -105,8 +110,12 @@ flex-wrap: wrap;
     text-decoration: none;
     font-size: 20px;
     padding: 13px 20px;
-    background: linear-gradient(45deg,#028fcb,#08AA57);
+    background:#2C2A2B;
     color: #fff;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
+}
+.file:hover .post__download{
+    background: #fff;
+    color:#2C2A2B;
 }
