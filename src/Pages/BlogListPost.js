@@ -12,6 +12,7 @@ class Blog extends Component{
         posts: [],
         nextUrl: '',
         previousUrl: '',
+        // published: null,
         loading: true
     }
  
@@ -24,6 +25,7 @@ class Blog extends Component{
              .then( res => {
                  this.setState({
                      posts: res.data.results,
+                    //  published: res.data.results.published,
                      nextUrl: res.data.next,
                      previousUrl: res.data.previous,
                      loading: false
@@ -39,8 +41,8 @@ class Blog extends Component{
        text-align: center;
        line-height: 100px;
        `
-        const posts = this.state.posts.map(post => (
-
+        const posts = this.state.posts.map(post =>  (
+            post.published ?
             <Link className="Blog-link" key={post.id}  to={`/blog/post/${post.id}`}>
                 <div className="Blog-post">
                      <h2 className="Blog-post-title" >{post.title}</h2>
@@ -54,10 +56,12 @@ class Blog extends Component{
                         {post.long_text.length > 200 ? `${post.long_text.substr(0,200)}...` : post.long_text}
                     </p>
                 </div>
+                {post.picture_url ? 
+                <img className="Blog-img-item" src={post.picture_url} alt='blog-img'></img> :
                 <img className="Blog-img-item" src={img} alt='blog-img'></img>
-            </Link>
-
-
+                }
+            </Link> :
+            null
         ))
         return (
             <>

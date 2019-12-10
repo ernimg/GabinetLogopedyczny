@@ -13,6 +13,7 @@ class Blog  extends Component{
             title:"",
             message:"",
             id: props.match.params.id,
+            piscture: "",
             loading: true
         };
       }
@@ -27,6 +28,7 @@ componentDidMount(){
        this.setState({
         title:message.data.title,
         message: message.data.long_text,
+        piscture: message.data.picture_url,
         loading: false
        }) 
     })
@@ -49,7 +51,10 @@ render() {
              :
             <article className="post">
                 <div className="post__header">
-                    <img className="post__img" src={img} alt='blog-img'></img>
+                {this.state.piscture ? 
+                <img className="post__img" src={this.state.piscture} alt='blog-img'></img> :
+                <img className="post__img" src={img} alt='blog-img'></img>
+                }
                 </div>
                 <div class="post__body">
                     <h1 class="post__title">
@@ -60,7 +65,6 @@ render() {
                     <p class="post__content-paragraph">
                         {this.state.message}
                     </p>
-
                     </div>
                     <div className="post__nav">
                     <Link to="/blog">
@@ -68,19 +72,7 @@ render() {
                     </Link>     
                     </div>
                 </div>
-                {/* <div className="dataBar clearfix">
-                    <FaUser className="dataBar-avatar"/>
-                    <h3 className="dataBar-title">Joanna Zacniewska</h3>
-                    <h6 className="dataBar-date">data</h6>
-                </div>
-                <div>
-                    social dataBar
-                </div>
-                <div>
-                    <h2 className="post-title" >{this.state.title}</h2>
-                    <p className="post-text">{this.state.message}</p>
 
-                </div> */}
             </article>
           }
         </>
