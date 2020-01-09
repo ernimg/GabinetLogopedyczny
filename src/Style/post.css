@@ -21,8 +21,8 @@
 		overflow: hidden;
 		position: relative;
 		opacity: 0;
-		-webkit-animation: imageAppears 0.35s var(--animation-easing) forwards .3s;
-		        animation: imageAppears 0.35s var(--animation-easing) forwards .3s;  
+		-webkit-animation: imageAppears 0.45s var(--animation-easing) forwards .3s;
+		        animation: imageAppears 0.45s var(--animation-easing) forwards .3s;  
 	  }
 	  .post__img {
 		-o-object-fit: cover;
@@ -44,8 +44,8 @@
 		width: 100%;
 		height: 100%;
 		display: block;
-		-webkit-animation: removeBar  0.35s var(--animation-easing) forwards 0.7s;
-		        animation: removeBar  0.35s var(--animation-easing) forwards 0.7s;
+		-webkit-animation: removeBar  0.45s var(--animation-easing) forwards 0.7s;
+		        animation: removeBar  0.45s var(--animation-easing) forwards 0.7s;
 		will-change: transform;
 	  }
 	  .post__body{
@@ -65,8 +65,8 @@
 		position: relative;
 		overflow: hidden;
 		opacity: 0;
-		-webkit-animation: contentBlockAppears 0.35 var(--animation-easing) forwards 0.3s;
-		        animation: contentBlockAppears 0.35 var(--animation-easing) forwards 0.3s;
+		-webkit-animation: contentBlockAppears 0.45 var(--animation-easing) forwards 0.3s;
+		        animation: contentBlockAppears 0.45 var(--animation-easing) forwards 0.3s;
 		will-change: transform, opacity; 
 	  }
 	  .post__title::before {
@@ -79,8 +79,8 @@
 		width: 100%;
 		height: 100%;
 		background: var(--color-app) ;
-		-webkit-animation: removeBar  0.35s var(--animation-easing) forwards 0.7s;
-		        animation: removeBar  0.35s var(--animation-easing) forwards 0.7s;
+		-webkit-animation: removeBar  0.45s var(--animation-easing) forwards 0.7s;
+		        animation: removeBar  0.45s var(--animation-easing) forwards 0.7s;
 		will-change: transform;
 	  }
 	  .post__title::after {
@@ -93,8 +93,8 @@
 		-webkit-transform: translateX(now -100%);
 		    -ms-transform: translateX(now -100%);
 		        transform: translateX(now -100%);
-		-webkit-animation: titleBorderAppears 0.35s var(--animation-easing) forwards 0.7s;
-		        animation: titleBorderAppears 0.35s var(--animation-easing) forwards 0.7s;
+		-webkit-animation: titleBorderAppears 0.45s var(--animation-easing) forwards 0.7s;
+		        animation: titleBorderAppears 0.45s var(--animation-easing) forwards 0.7s;
 		will-change: transform;
 		margin-bottom: 20px;
 	  }
@@ -109,8 +109,8 @@
 		overflow: hidden;
 		margin-bottom: 35px;
 		text-align: justify;
-		-webkit-animation: contentBlockAppears 0.35s var(--animation-easing) 0.15s;
-		        animation: contentBlockAppears 0.35s var(--animation-easing) 0.15s  
+		-webkit-animation: contentBlockAppears 0.45s var(--animation-easing) 0.15s;
+		        animation: contentBlockAppears 0.45s var(--animation-easing) 0.15s  
 	  }
 	  .post__content-paragraph::after {
 		content: "";
@@ -122,8 +122,8 @@
 		bottom: 0;
 		display: block;
 
-		-webkit-animation: removeBar  0.35s var(--animation-easing) forwards 0.7s;
-		        animation: removeBar  0.35s var(--animation-easing) forwards 0.7s;
+		-webkit-animation: removeBar  0.45s var(--animation-easing) forwards 0.7s;
+		        animation: removeBar  0.45s var(--animation-easing) forwards 0.7s;
 		will-change: transform;
 	  }
 

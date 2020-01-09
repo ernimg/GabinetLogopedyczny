@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaUser,FaFacebookF,FaLinkedinIn,FaMusic,FaFilm,FaSwimmer,FaBook, FaAngleRight} from 'react-icons/fa';
+
 import '../Style/About.css';
 const About = () =>{
 
@@ -10,7 +11,7 @@ const About = () =>{
                 <div className="about__header-icon">
                     <FaUser className="about__header-icon-item"/>
                 </div>
-                <h1 className="about__header-username">Imie Nazwisko</h1>
+                <h1 className="about__header-username">Jan Kowalski</h1>
             </div>
             <div className="about__body">
                 <div className="about__body-paragraf">
@@ -27,8 +28,8 @@ Aliquam malesuada dui nec tincidunt luctus. Nulla id tristique risus. Proin eges
                 </div>
                 <div className="about__body-aside">
                     <div className="social">
-                        <a href="#"><FaFacebookF/></a>
-                        <a href="#"><FaLinkedinIn/></a>
+                        <a href="https://www.facebook.com/"><FaFacebookF/></a>
+                        <a href="https://pl.linkedin.com/"><FaLinkedinIn/></a>
                     </div>
                     <div className="interests">
                        <h2 className="interests-header" >

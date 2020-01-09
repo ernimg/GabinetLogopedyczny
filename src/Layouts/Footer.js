@@ -10,11 +10,11 @@ const Footer = ()=>{
           className: 'fa-facebook-f',
         },
         {
-          url: 'https://pl.linkedin.com/in/joanna-zacniewska-782765171',
+          url: 'https://pl.linkedin.com/',
           className: 'fa-linkedin',
         },
         {
-          url: '/contact',
+          url: 'mailto:mail@mail.com',
           className: 'fa-envelope',
         },
       ];
@@ -34,7 +34,7 @@ const Footer = ()=>{
                 />
             </div>
             <div >
-                <p className="footer__copy">© 2019 Poradnia logopedyczna /dr Joanna Zacniewska</p> 
+                <p className="footer__copy">© 2019 Poradnia logopedyczna /dr Jan Kowalski</p> 
             </div>
         </>
     )
