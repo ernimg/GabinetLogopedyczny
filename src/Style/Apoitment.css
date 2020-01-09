@@ -1,4 +1,9 @@
+.apoitments{
+  position: relative;
+  padding: 20px 5px;
+  min-height: 350px;
 
+}
 .apoitments__l1,
 .apoitments__l2{
     position: relative;
@@ -86,31 +91,58 @@
 
   .fromAside{
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #000;
-    width: 60%;
-    height: 600px;
-    padding: 30px;
+    padding: 10px 5px 0 5px;
+    top: 8.5%;
+    left: 0%;
+
+    transform: translateX(-100%);
+    background-color: #186C88;
+    width: 100%;
+    height: 91.5%;
+    max-width: 620px;
     z-index: 1000;
-    display: none;
+    transition: .5s linear;
   }
   .fromAside.active{
-    display: block;
+    transform: translateX(0);
   }
   .close__form{
     display: block;
     background-color: #fff;
-    width: 30px;
-    height: 30px;
+    width: 100%;
+    padding: 10px;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
     text-decoration: none;
-    border-radius: 50%;
     position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(8px,-8px);
+    left:0;
+    bottom: 0;
+    border: .5px solid #ccc;
   }
+
+
+.form_btn2{
+  background-color: unset;
+  border: .5px solid #fff;
+  color: #fff;
+  padding: 15px 41px;
+  font-size: 16px;
+  margin: 24px 0 0 12px;
+  transition: .3s linear;
+}
+.form_btn2:hover{
+  background-color: #fff;
+  color: #000;
+  font: 700;
+}
+.select{
+  background-color: #186C88;
+}
+@media all and (min-height: 778px){
+  .fromAside{
+    top: 6.5%;
+    height: 93.5%;
+  }
+
+}

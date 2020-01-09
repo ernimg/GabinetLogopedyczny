@@ -9,7 +9,7 @@ const Input = (props)=>{
     switch(props.elementType){
         case('input'):
         inputElement = <input 
-            className = "InputElement" 
+            className = "InputElement apoitement" 
             {...props.elementConfig} 
             value = {props.value}
             onChange = {props.setInputValue}
@@ -26,7 +26,7 @@ const Input = (props)=>{
         case('select'):
         inputElement =(
             <select 
-            className = "InputElement" 
+            className = "InputElement select" 
             value = {props.value}
             onChange = {props.setInputValue}>
             {props.elementConfig.options.map(option =>(

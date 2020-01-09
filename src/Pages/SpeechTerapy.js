@@ -136,51 +136,51 @@ class SpeetchTeraphy extends Component{
         }).sort((a,b) => a.numericMonth - b.numericMonth);
         console.log(result);
 
-        const array = this.state.results;
-        const date = new Date();
-        const date1 = new Date();
-        date1.setMonth(date1.getMonth()+1);
-        const monthName = date.toLocaleString('default', { month: 'long' });
-        var Fm =  monthName.charAt(0).toUpperCase() + monthName.slice(1);
-        const nextMonthName = date1.toLocaleString('default', { month: 'long' });
-        var Sm =  nextMonthName.charAt(0).toUpperCase() + nextMonthName.slice(1);
-        const firstMonth = array.filter(x => (
-                x.month === Fm
-        ))
-        const secoundMonth = array.filter(x => (
-                x.month === Sm
-        ))
-        // console.log(firstMonth);
-        // console.log(secoundMonth);
-        const result1 = [];
-        const result2 = [];
+        // const array = this.state.results;
+        // const date = new Date();
+        // const date1 = new Date();
+        // date1.setMonth(date1.getMonth()+1);
+        // const monthName = date.toLocaleString('default', { month: 'long' });
+        // var Fm =  monthName.charAt(0).toUpperCase() + monthName.slice(1);
+        // const nextMonthName = date1.toLocaleString('default', { month: 'long' });
+        // var Sm =  nextMonthName.charAt(0).toUpperCase() + nextMonthName.slice(1);
+        // const firstMonth = array.filter(x => (
+        //         x.month === Fm
+        // ))
+        // const secoundMonth = array.filter(x => (
+        //         x.month === Sm
+        // ))
+        // // console.log(firstMonth);
+        // // console.log(secoundMonth);
+        // const result1 = [];
+        // const result2 = [];
 
-        const map = new Map();
-        for (const item of firstMonth) {
-            if(!map.has(item.day)){
-                console.log(item.day);
-                const hours =  firstMonth.filter(e =>  e.day === item.day );
-                // console.log(hours);
-                map.set(item.day, true);    
-                result1.push({
-                    id: item.id,
-                    day: item.day,
-                    month:item.month,
-                    year: item.year
-                });
-            }
-        }
-        for (const item of secoundMonth) {
-            if(!map.has(item.day)){
-                map.set(item.day, true);    
-                result2.push({
-                    id: item.id,
-                    day: item.day,
-                    month:item.month,
-                    year: item.year
-                });
-            }
-        }
+        // const map = new Map();
+        // for (const item of firstMonth) {
+        //     if(!map.has(item.day)){
+        //         console.log(item.day);
+        //         const hours =  firstMonth.filter(e =>  e.day === item.day );
+        //         // console.log(hours);
+        //         map.set(item.day, true);    
+        //         result1.push({
+        //             id: item.id,
+        //             day: item.day,
+        //             month:item.month,
+        //             year: item.year
+        //         });
+        //     }
+        // }
+        // for (const item of secoundMonth) {
+        //     if(!map.has(item.day)){
+        //         map.set(item.day, true);    
+        //         result2.push({
+        //             id: item.id,
+        //             day: item.day,
+        //             month:item.month,
+        //             year: item.year
+        //         });
+        //     }
+        // }
         // console.log(result1)
         // console.log(result2)
 
@@ -208,6 +208,7 @@ class SpeetchTeraphy extends Component{
             <form className="register__form" onSubmit = {this.goRegister}>
             {ElementsArr.map(formElement =>(
                 <Input 
+                className="apoitment__inputs"
                 key = {formElement.id}
                 elementType = {formElement.config.elementType} 
                 elementConfig = {formElement.config.elementConfig} 
@@ -215,7 +216,9 @@ class SpeetchTeraphy extends Component{
                 setInputValue = {(event) => this.inputHandler(event,formElement.id)}
                 /> 
             ))}
-            <FormBtn/>
+            <FormBtn
+            className="form_btn2"
+            />
             </form>
             </div>
             <div className="apoitments__l1">
@@ -224,12 +227,12 @@ class SpeetchTeraphy extends Component{
                 result ={result}
                />
             </div>
-            <div className="apoitments__l2">
+            {/* <div className="apoitments__l2">
             <Box
                 openFrom={this.openForm}
                 result ={result2}
                />
-            </div>
+            </div> */}
         </div>
         );
     }
