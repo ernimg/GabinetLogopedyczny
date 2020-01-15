@@ -32,11 +32,8 @@ componentDidMount(){
         loading: false
        }) 
     })
-
 }
-
 render() {
-    
     const override =`
     height: 100px;
     width: 100px;
@@ -56,13 +53,13 @@ render() {
                 <img className="post__img" src={img} alt='blog-img'></img>
                 }
                 </div>
-                <div class="post__body">
-                    <h1 class="post__title">
+                <div className="post__body">
+                    <h1 className="post__title">
                         {this.state.title}
                     </h1>
 
-                    <div class="post__content">
-                    <p class="post__content-paragraph">
+                    <div className="post__content">
+                    <p className="post__content-paragraph">
                         {this.state.message}
                     </p>
                     </div>
@@ -72,7 +69,6 @@ render() {
                     </Link>     
                     </div>
                 </div>
-
             </article>
           }
         </>

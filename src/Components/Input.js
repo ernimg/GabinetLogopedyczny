@@ -3,9 +3,7 @@ import React from "react";
 
 
 const Input = (props)=>{
-
     let inputElement = null;
- 
     switch(props.elementType){
         case('input'):
         inputElement = <input 
@@ -36,7 +34,6 @@ const Input = (props)=>{
             ))} 
         </select>
         )
-        
         break;
         default:
             inputElement = <input
@@ -44,7 +41,6 @@ const Input = (props)=>{
              {...props.elementConfig}
               value = {props.value} />
     }
-
 return(
     <div  className = "Input">  
         <label className = "Label">{props.label}</label>
@@ -52,5 +48,4 @@ return(
     </div>
 )
 }
-
 export default Input;

@@ -8,7 +8,7 @@ import Materials from '../Pages/Materials';
 import Blog from '../Pages/Blog';
 import BlogListPost from '../Pages/BlogListPost';
 import ErrorPage from '../Pages/ErrorPage';
-
+import Confirmation from '../Pages/Confirmation';
 const Page = ()=>{
     return(
         <>
@@ -20,6 +20,7 @@ const Page = ()=>{
                 <Route  exact path='/materials'  component={Materials}/>
                 <Route  exact path='/blog'  component={BlogListPost}/>
                 <Route  exact path='/blog/post/:id' component={Blog}/>
+                <Route  exact path='/visit/confitmation/' component={Confirmation}/>
                 <Route  path="/*" component={ErrorPage} />
                 <Redirect to='/ErrPage'/>
             </Switch>

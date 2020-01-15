@@ -19,7 +19,6 @@ const list = [
         path:"/contact",
     },
 ]
-
 const Navigation = () =>{
     const menu = list.map(item =>(
           <li key={item.id} className="nav__item"><NavLink className="nav__link" activeClassName="nav__link-active" to={item.path} exact={item.exact ? item.exact : false}>

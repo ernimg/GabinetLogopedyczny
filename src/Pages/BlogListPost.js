@@ -33,8 +33,9 @@ class Blog extends Component{
              })
     }
 
-    render() {
-        console.log(this.state.posts);
+    render(props) {
+    console.log(props);
+     console.log(this.state.posts);
        const override =`
        height: 100px;
        width: 100px;
@@ -47,7 +48,7 @@ class Blog extends Component{
                 <div className="Blog-post">
                      <h2 className="Blog-post-title" >{post.title}</h2>
                     <div className="bar clearfix">
-                        <h3 className="Blog-post-author" >Joanna Zacniewska</h3>
+                        <h3 className="Blog-post-author" >Jan Kowalski</h3>
                         <h6 className="Blog-post-date">
                             {post.published_date}
                         </h6>  

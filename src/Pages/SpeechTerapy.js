@@ -6,6 +6,7 @@ import CloseForm from '../Components/CloseFrom';
 import FormBtn from '../Components/FormBtn';
 import PulseLoader from 'react-spinners/PulseLoader';
 import axios from "axios";
+import { toast,ToastContainer } from 'react-toastify';
 class SpeetchTeraphy extends Component{
     state = {
         results:[],
@@ -67,7 +68,7 @@ class SpeetchTeraphy extends Component{
         
     */ 
     inputHandler = (event,idInput)=>{
-        console.log('DZIAŁAM');
+        // console.log('DZIAŁAM');
         const register = {
             ...this.state.register
         };
@@ -78,14 +79,14 @@ class SpeetchTeraphy extends Component{
         register[idInput]  = registerUpdate;
 
         this.setState({register});
-        console.log(this.state.register);
+        // console.log(this.state.register);
     }
     openForm = (card)=>{
-        const hours = card.app.map(app => ({display : app.appointment_time, value: app.id}));
+        const hours = card.app.map(app => ({display : app.appointment_time, value: app.id})).sort().reverse();
         var newRegister = this.state.register;
         newRegister.delivery.elementConfig.options = hours;
         newRegister.delivery.value = hours[0].value;
-        console.log(hours);
+        // console.log(hours);
         this.setState({
             open: true,
             register: newRegister
@@ -101,7 +102,7 @@ class SpeetchTeraphy extends Component{
         var groups = {};
         array.forEach(element => {
             var group = JSON.stringify(f(element));
-            groups[group] = groups[group] || {day: element.day, app: [], month: element.month, year: element.year, numericMonth: this.formatDate(element)};
+            groups[group] = groups[group] || {day: element.day, app: [], month: element.month, year: element.year, numericMonth: this.formatDate(element) };
             groups[group].app.push(element);
         });
         return Object.keys(groups).map(group => {
@@ -130,6 +131,7 @@ class SpeetchTeraphy extends Component{
         {headers: {'Content-Type': 'application/json'}})
           .then(function (response) {
             console.log(response);
+            toast(response.data.message, {containerId: 'A'})
         })
     }
 
@@ -138,7 +140,6 @@ class SpeetchTeraphy extends Component{
         const result = this.groupBy(this.state.results, elem => {
             return [elem.month, elem.day];
         }).sort((a,b) => a.numericMonth - b.numericMonth);
-        console.log(result);
 
         /*
 
@@ -152,7 +153,7 @@ class SpeetchTeraphy extends Component{
                 config:this.state.register[key]
                });
         }
-        console.log(ElementsArr);
+        // console.log(ElementsArr);
 
         
         const override =`
@@ -167,7 +168,11 @@ class SpeetchTeraphy extends Component{
                     this.state.loading ? 
                     <span className="loader"><PulseLoader  css={override}/></span>
                     :
+                    
                     <div className="apoitments">
+                        <div className="Contact__tosts">
+                        <ToastContainer className="Contact__tosts" enableMultiContainer containerId={'A'} position={toast.POSITION.TOP_RIGHT} autoClose={5000} />
+                        </div>
                         <div className={this.state.open ? "fromAside active": "fromAside"} >
                         <CloseForm  close={this.closeForm}/>
                         <form className="register__form" onSubmit = {this.goRegister}>
